@@ -9,7 +9,7 @@
     <input type="text" id="name" name="name" class="form-control">
     <input type="text" id="description" name="description" class="form-control">
     <input type="file" id="images" class="form-control" multiple>
-    <div id="imagePreview" class="d-flex flex-wrap mt-2">Img</div>
+    <div id="imagePreview" class="d-flex flex-wrap mt-2"></div>
     <button id="uploadBtn" class="btn btn-primary mt-2">Upload Image</button>
 </div>
 
