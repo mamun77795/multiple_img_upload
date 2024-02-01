@@ -10,7 +10,6 @@
     <?php echo $__env->yieldContent('css'); ?>
   </head>
   <body>
-    <h1>Dashboard</h1>
 
     <?php echo $__env->yieldContent('content'); ?>
 

@@ -10,7 +10,6 @@
     @yield('css')
   </head>
   <body>
-    <h1>Dashboard</h1>
 
     @yield('content')
 

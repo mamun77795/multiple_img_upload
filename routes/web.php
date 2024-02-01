@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,3 +20,5 @@ Route::get('/', function () {
 });
 
 Route::resource('uploads', UploadController::class);
+Route::resource('students', StudentController::class);
+

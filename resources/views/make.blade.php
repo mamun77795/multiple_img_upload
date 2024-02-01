@@ -20,7 +20,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script>
     var formData = new FormData();
-
+   
     $(document).ready(function() {
         $('#images').change(function() {
             previewImages(this);
@@ -46,7 +46,7 @@
         var description = $('#description').val();
         formData.append('name', name);
         formData.append('description', description);
-
+        
         $.ajax({
             url: 'http://localhost/multiple_image_upload/public/api/uploads',
             method: 'POST',

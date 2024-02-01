@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UploadController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -19,4 +20,5 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::post('/uploads', [UploadController::class, 'store']);
+Route::post('/uploads', [UploadController::class, 'store'])->name('uploads');
+Route::post('/insert', [StudentController::class, 'store'])->name('insert');
