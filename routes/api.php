@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UploadController;
+use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,3 +23,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/uploads', [UploadController::class, 'store'])->name('uploads');
 Route::post('/insert', [StudentController::class, 'store'])->name('insert');
+Route::post('/edit-data', [StudentController::class, 'edit'])->name('edit');
+Route::post('/update-data', [StudentController::class, 'update'])->name('update');
+Route::post('/delete-data', [StudentController::class, 'destroy'])->name('delete');

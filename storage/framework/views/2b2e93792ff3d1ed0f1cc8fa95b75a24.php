@@ -1,7 +1,7 @@
 
 
 <?php $__env->startSection('css'); ?>
-
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
@@ -9,6 +9,7 @@
     <div class="row">
         <div class="col-md-12">
             <h5>Student Information</h5>
+            <span id="msg"></span>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -40,6 +41,27 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('js'); ?>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    var formData = new FormData();
 
+    $(document).ready(function(){
+        $('#delBtn').click(function(){
+            var id = $('#id').val();
+            formData.append('id', id);
+
+            $.ajax({
+                url: 'http://localhost/multiple_image_upload/public/api/delete-data',
+                method:'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(response){
+                    $('#msg').html(response.data);
+                }
+            })
+        })
+    })
+</script>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\xampp\htdocs\multiple_image_upload\resources\views/student/index.blade.php ENDPATH**/ ?>

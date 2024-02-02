@@ -13,14 +13,13 @@
     <button id="uploadBtn" class="btn btn-primary mt-2">Upload Image</button>
 </div>
 
-
 @endsection
 
 @section('js')
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script>
     var formData = new FormData();
-   
+
     $(document).ready(function() {
         $('#images').change(function() {
             previewImages(this);
@@ -41,19 +40,19 @@
         }
     }
 
-    $('#uploadBtn').click(function(){
+    $('#uploadBtn').click(function() {
         var name = $('#name').val();
         var description = $('#description').val();
         formData.append('name', name);
         formData.append('description', description);
-        
+
         $.ajax({
             url: 'http://localhost/multiple_image_upload/public/api/uploads',
             method: 'POST',
             data: formData,
             contentType: false,
-            processData:false,
-            success: function(response){ 
+            processData: false,
+            success: function(response) {
                 alert(response.data);
             }
         });
